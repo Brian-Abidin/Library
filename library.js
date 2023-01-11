@@ -23,3 +23,21 @@ const book1 = new Book(
 addBookToLibrary(book1);
 
 console.log(myLibrary);
+
+/*
+- create form asking for user input (HTML/CSS/JS)
+- add userinput for title, author, pages, read for form (JS)
+- create button on HTML to access open up form (HTML/CSS)
+- on click form will open up to a set size card centered to 
+the webpage (HTML/CSS/JS)
+- create form submit button (HTML)
+- on form submission, create new object for the book with the
+properties of title, author, pages, read. (JS)
+- on form submission, create a card 1/5 of screen, that has two 
+layers. The card layer and a smaller centered card with the
+book title, author and pages. (HTML / CSS)
+- card layer has two buttons, one at top right corner and one
+at top left corner. Top right button changes read/unread. Top
+left deletes book from array. (HTML/CSS/JS)
+- on click delete book button, remove book from array. (JS)
+*/
