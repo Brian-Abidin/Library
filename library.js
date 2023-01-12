@@ -1,3 +1,5 @@
+const container = document.querySelector("#container");
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -12,25 +14,35 @@ function addBookToLibrary(book) {
   myLibrary.push(book); // add book to myLibrary Array
 }
 
-const book1 = new Book(
+const book1 = new Book( // turn this book into user input
   "Green Eggs and Ham",
   "Dr.Suess",
   "50 pages",
   "not read yet"
 );
 
-const book2 = new Book(
+const book2 = new Book( // turn this book into user input
   "Harry Potter",
   "J.K. Rowling",
   "500 pages",
   "not read yet"
 );
 
-addBookToLibrary(book1);
+addBookToLibrary(book1); // do this automatically have a connection with book
 addBookToLibrary(book2);
 
 for (let i = 0; i < myLibrary.length; i += 1) {
+  const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
   console.log(myLibrary[i]);
+  const content = document.createElement("div");
+  content.style.backgroundColor = "blue";
+  content.style.border = "1px solid black";
+  // display each book in html
+  content.textContent = `${book.title} 
+    by ${book.author}
+    ${book.pages} 
+    The book is ${book.read}`;
+  container.appendChild(content);
 }
 
 /*
