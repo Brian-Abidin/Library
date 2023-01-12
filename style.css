@@ -6,3 +6,15 @@ body {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
 }
+
+.newbook {
+  width: 100px;
+  height: 50px;
+  background-color: purple;
+}
+
+.formwrapper {
+  background-color: aqua;
+  text-align: center;
+  padding-bottom: 10px;
+}
