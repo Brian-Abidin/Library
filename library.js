@@ -9,7 +9,6 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   // on form submit object.create(book) with the proper properties
-
   myLibrary.push(book); // add book to myLibrary Array
 }
 
@@ -20,11 +19,23 @@ const book1 = new Book(
   "not read yet"
 );
 
-addBookToLibrary(book1);
+const book2 = new Book(
+  "Harry Potter",
+  "J.K. Rowling",
+  "500 pages",
+  "not read yet"
+);
 
-console.log(myLibrary);
+addBookToLibrary(book1);
+addBookToLibrary(book2);
+
+for (let i = 0; i < myLibrary.length; i += 1) {
+  console.log(myLibrary[i]);
+}
 
 /*
+- create a for loop that searches through the myLibrary array
+and displays each book. (JS)
 - create form asking for user input (HTML/CSS/JS)
 - add userinput for title, author, pages, read for form (JS)
 - create button on HTML to access open up form (HTML/CSS)
