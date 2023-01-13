@@ -1,4 +1,6 @@
 const container = document.querySelector("#container");
+const form = document.querySelector("form");
+const read = document.querySelector("readBook");
 
 const myLibrary = [];
 
@@ -9,42 +11,31 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-const form = document.querySelector("form");
-
 // function displays most recent book added
 function displayBook() {
   for (let i = myLibrary.length - 1; i < myLibrary.length; i += 1) {
     const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
     console.log(myLibrary[i]);
     const content = document.createElement("div");
+    const delBook = document.createElement("button");
+    const botBook = document.createElement("div");
+    const readBook = document.createElement("button");
+    delBook.classList.add("delBook");
     content.classList.add("bookdisplay");
-    /*
-    content.style.backgroundColor = "tan";
-    content.style.border = "1px solid black";
-    content.style.height = "100px";
-    content.style.textAlign = "center";
-    */
-    // display each book in html
+    botBook.classList.add("botBook");
+    readBook.classList.add("readBook");
     content.textContent = `${book.title}
     by ${book.author}
     ${book.pages}
     ${book.read}`;
     container.appendChild(content);
+    content.appendChild(botBook);
+    botBook.appendChild(delBook);
+    botBook.appendChild(readBook);
   }
 }
 
-/*
-form.onsubmit = function addBookToLibrary() {
-  // on form submit object.create(book) with the proper properties
-  const booktitle = document.getElementById("booktitle").value;
-  const bookauthor = document.getElementById("bookauthor").value;
-  const bookpages = document.getElementById("bookpages").value;
-  const bookread = document.getElementById("bookread").value;
-  const book = new Book(booktitle, bookauthor, bookpages, bookread);
-  myLibrary.push(book); // add book to myLibrary Array
-  displayBook();
-};
-*/
+function changeRead(event) {}
 
 function addBookToLibrary(event) {
   const booktitle = document.getElementById("booktitle").value;
