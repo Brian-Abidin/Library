@@ -6,6 +6,8 @@ body {
 #container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  background-color: rgb(18, 231, 82);
+  gap: 20px;
 }
 
 .newbook {
@@ -42,4 +44,25 @@ body {
   height: 100px;
   text-align: center;
   padding-top: 20px;
+  min-width: 100px;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.delBook {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+}
+
+.readBook {
+  width: 15px;
+  height: 15px;
+  background-color: green;
+}
+
+.botBook {
+  display: flex;
+  justify-content: space-between;
+  background-color: cadetblue;
 }
