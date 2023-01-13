@@ -7,52 +7,58 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="#" method="post" class="form">
-      <div class="formwrapper">
-        <div class="formtitle">Add a New Book!</div>
-        <div class="booktitle">
-          <label for="booktitle">Title</label>
-          <input
-            type="text"
-            name="booktitle"
-            id="booktitle"
-            placeholder=""
-            required
-          />
-        </div>
-        <div class="bookauthor">
-          <label for="bookauthor">Author</label>
-          <input
-            type="text"
-            name="bookauthor"
-            id="bookauthor"
-            placeholder=""
-            required
-          />
-        </div>
-        <div class="bookpages">
-          <label for="bookpages">Pages</label>
-          <input
-            type="number"
-            name="bookpages"
-            id="bookpages"
-            placeholder=""
-            required
-            min="1"
-          />
-        </div>
-        <div class="bookread">
-          <label for="bookread">Read?</label>
-          <select name="bookread" id="bookread">
-            <option value="Not Read" selected>Not Read</option>
-            <option value="Read">Read</option>
-            <option value="In Progress">In Progress</option>
-          </select>
-        </div>
-        <button type="submit" id="submitbtn">Add Book</button>
+    <div class="wrapper">
+      <div class="header">
+        <div class="topheader">Library</div>
+        <div class="botheader">Books</div>
       </div>
-    </form>
-    <button class="newbook">NEW BOOK</button>
-    <div id="container"></div>
+      <form action="#" method="post" class="form">
+        <div class="formwrapper">
+          <div class="formtitle">Add a New Book!</div>
+          <div class="booktitle">
+            <label for="booktitle">Title</label>
+            <input
+              type="text"
+              name="booktitle"
+              id="booktitle"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="bookauthor">
+            <label for="bookauthor">Author</label>
+            <input
+              type="text"
+              name="bookauthor"
+              id="bookauthor"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="bookpages">
+            <label for="bookpages"># of Pages</label>
+            <input
+              type="number"
+              name="bookpages"
+              id="bookpages"
+              placeholder=""
+              required
+              min="1"
+            />
+          </div>
+          <div class="bookread">
+            <label for="bookread">Read?</label>
+            <select name="bookread" id="bookread">
+              <option value="Not Read" selected>Not Read</option>
+              <option value="Read">Read</option>
+              <option value="In Progress">In Progress</option>
+            </select>
+          </div>
+          <button type="submit" id="submitbtn">Add Book</button>
+        </div>
+      </form>
+      <button class="newbook">NEW BOOK</button>
+      <div id="container"></div>
+    </div>
   </body>
 </html>
