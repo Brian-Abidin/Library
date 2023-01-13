@@ -9,41 +9,34 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary(book) {
-  // on form submit object.create(book) with the proper properties
-  myLibrary.push(book); // add book to myLibrary Array
-}
+const form = document.querySelector("form");
 
-const book1 = new Book( // turn this book into user input
-  "Green Eggs and Ham",
-  "Dr.Suess",
-  "50 pages",
-  "not read yet"
-);
-
-const book2 = new Book( // turn this book into user input
-  "Harry Potter",
-  "J.K. Rowling",
-  "500 pages",
-  "not read yet"
-);
-
-addBookToLibrary(book1); // do this automatically have a connection with book
-addBookToLibrary(book2);
-
-for (let i = 0; i < myLibrary.length; i += 1) {
-  const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
-  console.log(myLibrary[i]);
-  const content = document.createElement("div");
-  content.style.backgroundColor = "blue";
-  content.style.border = "1px solid black";
-  // display each book in html
-  content.textContent = `${book.title} 
+function displayBook() {
+  for (let i = 0; i < myLibrary.length; i += 1) {
+    const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
+    console.log(myLibrary[i]);
+    const content = document.createElement("div");
+    content.style.backgroundColor = "blue";
+    content.style.border = "1px solid black";
+    // display each book in html
+    content.textContent = `${book.title} 
     by ${book.author}
     ${book.pages} 
-    The book is ${book.read}`;
-  container.appendChild(content);
+    ${book.read}`;
+    container.appendChild(content);
+  }
 }
+
+form.onsubmit = function addBookToLibrary() {
+  // on form submit object.create(book) with the proper properties
+  const booktitle = document.getElementById("booktitle").value;
+  const bookauthor = document.getElementById("bookauthor").value;
+  const bookpages = document.getElementById("bookpages").value;
+  const bookread = document.getElementById("bookread").value;
+  const book = new Book(booktitle, bookauthor, bookpages, bookread);
+  myLibrary.push(book); // add book to myLibrary Array
+  displayBook();
+};
 
 /*
 - create a for loop that searches through the myLibrary array
@@ -63,4 +56,29 @@ book title, author and pages. (HTML / CSS)
 at top left corner. Top right button changes read/unread. Top
 left deletes book from array. (HTML/CSS/JS)
 - on click delete book button, remove book from array. (JS)
+*/
+
+/* SAMPLE BOOKS
+const book1 = new Book( // turn this book into user input
+  "Green Eggs and Ham",
+  "Dr.Suess",
+  "50 pages",
+  "not read yet"
+);
+
+const book2 = new Book( // turn this book into user input
+  "Harry Potter",
+  "J.K. Rowling",
+  "500 pages",
+  "not read yet"
+); */
+
+/* SAMPLE TO CHECK IF ON SUBMIT IS WORKING
+function samplesubmit(event) {
+  console.log(myLibrary[0]);
+  container.textContent = "Hello World!";
+  event.preventDefault();
+}
+
+form.addEventListener("submit", samplesubmit);
 */
