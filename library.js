@@ -11,22 +11,29 @@ function Book(title, author, pages, read) {
 
 const form = document.querySelector("form");
 
+// function displays most recent book added
 function displayBook() {
-  for (let i = 0; i < myLibrary.length; i += 1) {
+  for (let i = myLibrary.length - 1; i < myLibrary.length; i += 1) {
     const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
     console.log(myLibrary[i]);
     const content = document.createElement("div");
-    content.style.backgroundColor = "blue";
+    content.classList.add("bookdisplay");
+    /*
+    content.style.backgroundColor = "tan";
     content.style.border = "1px solid black";
+    content.style.height = "100px";
+    content.style.textAlign = "center";
+    */
     // display each book in html
-    content.textContent = `${book.title} 
+    content.textContent = `${book.title}
     by ${book.author}
-    ${book.pages} 
+    ${book.pages}
     ${book.read}`;
     container.appendChild(content);
   }
 }
 
+/*
 form.onsubmit = function addBookToLibrary() {
   // on form submit object.create(book) with the proper properties
   const booktitle = document.getElementById("booktitle").value;
@@ -37,6 +44,30 @@ form.onsubmit = function addBookToLibrary() {
   myLibrary.push(book); // add book to myLibrary Array
   displayBook();
 };
+*/
+
+function addBookToLibrary(event) {
+  const booktitle = document.getElementById("booktitle").value;
+  const bookauthor = document.getElementById("bookauthor").value;
+  const bookpages = document.getElementById("bookpages").value;
+  const bookread = document.getElementById("bookread").value;
+  const book = new Book(booktitle, bookauthor, bookpages, bookread);
+  myLibrary.push(book); // add book to myLibrary Array
+  event.preventDefault();
+  displayBook();
+}
+
+form.addEventListener("submit", addBookToLibrary);
+
+/*
+function samplesubmit(event) {
+  console.log(myLibrary[0]);
+  container.textContent = "Hello World!";
+  event.preventDefault();
+}
+
+form.addEventListener("submit", samplesubmit);
+*/
 
 /*
 - create a for loop that searches through the myLibrary array
@@ -72,13 +103,3 @@ const book2 = new Book( // turn this book into user input
   "500 pages",
   "not read yet"
 ); */
-
-/* SAMPLE TO CHECK IF ON SUBMIT IS WORKING
-function samplesubmit(event) {
-  console.log(myLibrary[0]);
-  container.textContent = "Hello World!";
-  event.preventDefault();
-}
-
-form.addEventListener("submit", samplesubmit);
-*/
