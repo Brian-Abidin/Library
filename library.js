@@ -1,7 +1,7 @@
 const container = document.querySelector("#container");
 const form = document.querySelector("form");
 const read = document.querySelector("readBook");
-const delete = document.querySelector("delete");
+const remove = document.querySelector("delBook");
 
 const myLibrary = [];
 
@@ -25,21 +25,46 @@ function displayBook() {
     content.classList.add("bookdisplay");
     botBook.classList.add("botBook");
     readBook.classList.add("readBook");
+    delBook.setAttribute("id", i);
+    readBook.setAttribute("id", i);
+    switch (book.read) {
+      case "Read":
+        readBook.style.backgroundColor = "Green";
+        break;
+      case "Not Read":
+        readBook.style.backgroundColor = "Red";
+        break;
+      case "In Progress":
+        readBook.style.backgroundColor = "Yellow";
+        break;
+      default:
+    }
     content.textContent = `${book.title}
     by ${book.author}
-    ${book.pages}
+    pages: ${book.pages}
     ${book.read}`;
     container.appendChild(content);
     content.appendChild(botBook);
     botBook.appendChild(delBook);
     botBook.appendChild(readBook);
+    console.log(readBook.getAttribute("id"));
   }
 }
 
-function changeRead(event) {}
-function deleteBook(event){
-  
+/*
+function changeRead(event) {
+  const book = myLibrary[readBook.getAttribute("id")];
+  if ((book.title = "Read")) {
+    book.title = "Not Read";
+  } else if ((book.title = "Not Read")) {
+    book.title = "Read";
+  }
 }
+
+read.addEventListener("click", changeRead);
+*/
+
+function removeBook(event) {}
 
 function addBookToLibrary(event) {
   const booktitle = document.getElementById("booktitle").value;
