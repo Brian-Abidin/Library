@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const form = document.querySelector("form");
 const read = document.querySelector("readBook");
+const delete = document.querySelector("delete");
 
 const myLibrary = [];
 
@@ -36,6 +37,9 @@ function displayBook() {
 }
 
 function changeRead(event) {}
+function deleteBook(event){
+  
+}
 
 function addBookToLibrary(event) {
   const booktitle = document.getElementById("booktitle").value;
