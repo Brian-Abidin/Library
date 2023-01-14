@@ -12,6 +12,16 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+const isRead = document.getElementById("1");
+
+// isRead.addEventListener("click", (e) => {
+//  console.log(e.target.id);
+// });
+
+/* function reading() {
+  console.log(isRead);
+} */
+
 // function displays most recent book added
 function displayBook() {
   for (let i = myLibrary.length - 1; i < myLibrary.length; i += 1) {
@@ -47,24 +57,31 @@ function displayBook() {
     content.appendChild(botBook);
     botBook.appendChild(delBook);
     botBook.appendChild(readBook);
+
+    readBook.addEventListener("click", () => {
+      if (readBook.style.backgroundColor === "green") {
+        readBook.style.backgroundColor = "yellow";
+        book.read = "In Progress";
+        console.log(book.read);
+      } else if (readBook.style.backgroundColor === "yellow") {
+        readBook.style.backgroundColor = "red";
+        book.read = "Not Read";
+        console.log(book.read);
+      } else if (readBook.style.backgroundColor === "red") {
+        readBook.style.backgroundColor = "green";
+        book.read = "Read";
+        console.log(book.read);
+      }
+      console.log(readBook.style.backgroundColor);
+    });
     console.log(readBook.getAttribute("id"));
   }
+  // reading();
 }
 
-/*
-function changeRead(event) {
-  const book = myLibrary[readBook.getAttribute("id")];
-  if ((book.title = "Read")) {
-    book.title = "Not Read";
-  } else if ((book.title = "Not Read")) {
-    book.title = "Read";
-  }
-}
+// read.addEventListener("click", changeRead);
 
-read.addEventListener("click", changeRead);
-*/
-
-function removeBook(event) {}
+// function removeBook(event) {}
 
 function addBookToLibrary(event) {
   const booktitle = document.getElementById("booktitle").value;
