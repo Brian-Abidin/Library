@@ -47,18 +47,18 @@ function displayBook() {
     botBook.appendChild(readBook);
 
     readBook.addEventListener("click", () => {
-      if (readBook.style.backgroundColor === "green") {
+      if (readBook.style.backgroundColor === "chartreuse") {
         readBook.style.backgroundColor = "Yellow";
         book.read = "In Progress";
         console.log(book.read);
         readBook.textContent = "In Progress";
       } else if (readBook.style.backgroundColor === "yellow") {
-        readBook.style.backgroundColor = "Orange";
+        readBook.style.backgroundColor = "white";
         book.read = "Not Read";
         console.log(book.read);
         readBook.textContent = "Not Read";
-      } else if (readBook.style.backgroundColor === "orange") {
-        readBook.style.backgroundColor = "Green";
+      } else if (readBook.style.backgroundColor === "white") {
+        readBook.style.backgroundColor = "chartreuse";
         book.read = "Read";
         console.log(book.read);
         readBook.textContent = "Read";
@@ -68,13 +68,13 @@ function displayBook() {
 
     switch (book.read) {
       case "Read":
-        readBook.style.backgroundColor = "Green";
+        readBook.style.backgroundColor = "chartreuse";
         break;
       case "Not Read":
-        readBook.style.backgroundColor = "Orange";
+        readBook.style.backgroundColor = "white";
         break;
       case "In Progress":
-        readBook.style.backgroundColor = "Yellow";
+        readBook.style.backgroundColor = "yellow";
         break;
       default:
     }
@@ -135,7 +135,7 @@ left deletes book from array. (HTML/CSS/JS)
 
 /* SAMPLE BOOKS
 const book1 = new Book( // turn this book into user input
-  "Green Eggs and Ham",
+  "Chartreuse Eggs and Ham",
   "Dr.Suess",
   "50 pages",
   "not read yet"
