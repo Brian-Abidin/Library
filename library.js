@@ -1,7 +1,5 @@
 const container = document.querySelector("#container");
 const form = document.querySelector("form");
-const read = document.querySelector("readBook");
-const remove = document.querySelector("delBook");
 
 const myLibrary = [];
 
@@ -12,15 +10,11 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-const isRead = document.getElementById("1");
+// const isRead = document.getElementById("1");
 
 // isRead.addEventListener("click", (e) => {
 //  console.log(e.target.id);
 // });
-
-/* function reading() {
-  console.log(isRead);
-} */
 
 // function displays most recent book added
 function displayBook() {
@@ -35,20 +29,9 @@ function displayBook() {
     content.classList.add("bookdisplay");
     botBook.classList.add("botBook");
     readBook.classList.add("readBook");
-    delBook.setAttribute("id", i);
-    readBook.setAttribute("id", i);
-    switch (book.read) {
-      case "Read":
-        readBook.style.backgroundColor = "Green";
-        break;
-      case "Not Read":
-        readBook.style.backgroundColor = "Red";
-        break;
-      case "In Progress":
-        readBook.style.backgroundColor = "Yellow";
-        break;
-      default:
-    }
+    // delBook.setAttribute("id", i);
+    // readBook.setAttribute("id", i);
+    content.setAttribute("id", i);
     content.textContent = `${book.title}
     by ${book.author}
     pages: ${book.pages}
@@ -74,9 +57,29 @@ function displayBook() {
       }
       console.log(readBook.style.backgroundColor);
     });
-    console.log(readBook.getAttribute("id"));
+
+    switch (book.read) {
+      case "Read":
+        readBook.style.backgroundColor = "Green";
+        break;
+      case "Not Read":
+        readBook.style.backgroundColor = "Red";
+        break;
+      case "In Progress":
+        readBook.style.backgroundColor = "Yellow";
+        break;
+      default:
+    }
+
+    delBook.addEventListener("click", () => {
+      myLibrary.splice(i, 1);
+      content.textContent = "";
+      content.replaceChildren();
+      const attribute = content.getAttribute("id");
+      const element = document.getElementById(attribute);
+      element.remove();
+    });
   }
-  // reading();
 }
 
 // read.addEventListener("click", changeRead);
