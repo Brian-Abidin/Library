@@ -10,12 +10,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-// const isRead = document.getElementById("1");
-
-// isRead.addEventListener("click", (e) => {
-//  console.log(e.target.id);
-// });
-
 // function displays most recent book added
 function displayBook() {
   for (let i = myLibrary.length - 1; i < myLibrary.length; i += 1) {
@@ -34,8 +28,7 @@ function displayBook() {
     content.setAttribute("id", i);
     content.textContent = `${book.title}
     by ${book.author}
-    pages: ${book.pages}
-    ${book.read}`;
+    pages: ${book.pages}`;
     container.appendChild(content);
     content.appendChild(botBook);
     botBook.appendChild(delBook);
@@ -81,10 +74,6 @@ function displayBook() {
     });
   }
 }
-
-// read.addEventListener("click", changeRead);
-
-// function removeBook(event) {}
 
 function addBookToLibrary(event) {
   const booktitle = document.getElementById("booktitle").value;
