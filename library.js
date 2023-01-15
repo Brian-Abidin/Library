@@ -1,7 +1,17 @@
 const container = document.querySelector("#container");
 const form = document.querySelector("form");
+const newbook = document.getElementById("newbook");
+const cancelbutton = document.getElementById("close");
 
 const myLibrary = [];
+
+newbook.addEventListener("click", () => {
+  form.style.display = "block";
+});
+
+cancelbutton.addEventListener("click", () => {
+  form.style.display = "none";
+});
 
 function Book(title, author, pages, read) {
   this.title = title;
