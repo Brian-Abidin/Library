@@ -39,6 +39,8 @@ function displayBook() {
     content.textContent = `${book.title}
     by ${book.author}
     pages: ${book.pages}`;
+    readBook.textContent = `${book.read}`;
+    delBook.textContent = "Delete";
     container.appendChild(content);
     content.appendChild(botBook);
     botBook.appendChild(delBook);
@@ -46,17 +48,20 @@ function displayBook() {
 
     readBook.addEventListener("click", () => {
       if (readBook.style.backgroundColor === "green") {
-        readBook.style.backgroundColor = "yellow";
+        readBook.style.backgroundColor = "Yellow";
         book.read = "In Progress";
         console.log(book.read);
+        readBook.textContent = "In Progress";
       } else if (readBook.style.backgroundColor === "yellow") {
-        readBook.style.backgroundColor = "red";
+        readBook.style.backgroundColor = "Orange";
         book.read = "Not Read";
         console.log(book.read);
-      } else if (readBook.style.backgroundColor === "red") {
-        readBook.style.backgroundColor = "green";
+        readBook.textContent = "Not Read";
+      } else if (readBook.style.backgroundColor === "orange") {
+        readBook.style.backgroundColor = "Green";
         book.read = "Read";
         console.log(book.read);
+        readBook.textContent = "Read";
       }
       console.log(readBook.style.backgroundColor);
     });
@@ -66,7 +71,7 @@ function displayBook() {
         readBook.style.backgroundColor = "Green";
         break;
       case "Not Read":
-        readBook.style.backgroundColor = "Red";
+        readBook.style.backgroundColor = "Orange";
         break;
       case "In Progress":
         readBook.style.backgroundColor = "Yellow";
