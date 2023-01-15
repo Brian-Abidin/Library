@@ -59,7 +59,7 @@ body {
   height: 100px;
   text-align: center;
   padding-top: 20px;
-  min-width: 100px;
+  max-width: 200px;
   display: grid;
   grid-template-rows: 3fr 1fr;
 }
