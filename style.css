@@ -65,14 +65,10 @@ body {
 }
 
 .delBook {
-  width: 15px;
-  height: 15px;
   background-color: red;
 }
 
 .readBook {
-  width: 15px;
-  height: 15px;
   background-color: green;
 }
 
