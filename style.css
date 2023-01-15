@@ -14,12 +14,27 @@ body {
   width: 100px;
   height: 50px;
   background-color: purple;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+}
+
+.form {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  z-index: 9;
 }
 
 .formwrapper {
   background-color: aqua;
   text-align: center;
   padding-bottom: 10px;
+}
+
+#close {
+  background-color: red;
 }
 
 .header {
