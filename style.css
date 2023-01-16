@@ -6,8 +6,9 @@ body {
 #container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background-color: rgb(18, 231, 82);
   gap: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .newbook {
@@ -17,23 +18,26 @@ body {
   position: fixed;
   bottom: 23px;
   right: 28px;
-  border-radius: 30px;
-  border: 1px black solid;
+  border-style: none;
   background: url(./icons/book.png) no-repeat;
+  background-position: center;
+  cursor: grab;
 }
 
 .form {
   display: none;
   position: fixed;
   bottom: 0;
-  right: 15px;
+  right: 1px;
+  margin-bottom: 30px;
   z-index: 9;
 }
 
 .formwrapper {
-  background-color: aqua;
+  border: 1px black solid;
   text-align: center;
   padding-bottom: 10px;
+  background-color: white;
 }
 
 #close {
@@ -45,26 +49,27 @@ body {
   grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-content: center;
-  background-color: aquamarine;
+  border-bottom: 1px solid black;
 }
 
 .topheader {
-  background-color: rgb(30, 38, 150);
+  font-size: 40px;
 }
 
 .botheader {
-  font-size: xx-large;
+  text-align: center;
 }
 
 .bookdisplay {
-  background-color: tan;
+  background-color: rgb(252, 178, 82);
   border: 1px solid black;
-  height: 100px;
   text-align: center;
-  padding-top: 20px;
-  max-width: 200px;
+  padding-top: 50px;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+}
+
+.titlebook {
+  padding-bottom: 40px;
 }
 
 .delBook {
@@ -78,5 +83,4 @@ body {
 .botBook {
   display: flex;
   justify-content: space-between;
-  background-color: cadetblue;
 }
