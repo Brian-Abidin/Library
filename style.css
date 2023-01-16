@@ -38,10 +38,21 @@ body {
   text-align: center;
   padding-bottom: 10px;
   background-color: white;
+  padding: 30px;
+}
+
+.newbooktitle {
+  padding-bottom: 10px;
 }
 
 #close {
   background-color: red;
+  color: white;
+}
+
+#close,
+#submitbtn {
+  margin-top: 10px;
 }
 
 .header {
@@ -54,6 +65,7 @@ body {
 
 .topheader {
   font-size: 40px;
+  text-align: center;
 }
 
 .botheader {
@@ -62,10 +74,12 @@ body {
 
 .bookdisplay {
   background-color: rgb(252, 178, 82);
-  border: 1px solid black;
   text-align: center;
   padding-top: 50px;
   display: grid;
+  min-width: 150px;
+  border: 1px black solid;
+  border-radius: 5px;
 }
 
 .titlebook {
@@ -73,11 +87,20 @@ body {
 }
 
 .delBook {
-  background-color: red;
+  background-color: rgb(241, 26, 26);
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+  cursor: grab;
+  height: 20px;
 }
 
 .readBook {
   background-color: green;
+  border-radius: 10px;
+  border-style: none;
+  height: 20px;
+  cursor: grab;
 }
 
 .botBook {
