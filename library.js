@@ -26,9 +26,13 @@ function displayBook() {
     const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
     console.log(myLibrary[i]);
     const content = document.createElement("div");
+    const titlebook = document.createElement("div");
+    const authorbook = document.createElement("div");
+    const pagesbook = document.createElement("div");
     const delBook = document.createElement("button");
     const botBook = document.createElement("div");
     const readBook = document.createElement("button");
+    titlebook.classList.add("titlebook");
     delBook.classList.add("delBook");
     content.classList.add("bookdisplay");
     botBook.classList.add("botBook");
@@ -36,11 +40,13 @@ function displayBook() {
     // delBook.setAttribute("id", i);
     // readBook.setAttribute("id", i);
     content.setAttribute("id", i);
-    content.textContent = `${book.title}
-    by ${book.author}
-    pages: ${book.pages}`;
-    readBook.textContent = `${book.read}`;
+    titlebook.textContent = `${book.title}`;
+    authorbook.textContent = `by ${book.author}`;
+    pagesbook.textContent = `Pages: ${book.pages}`;
     delBook.textContent = "Delete";
+    content.appendChild(titlebook);
+    content.appendChild(authorbook);
+    content.appendChild(pagesbook);
     container.appendChild(content);
     content.appendChild(botBook);
     botBook.appendChild(delBook);
@@ -69,12 +75,15 @@ function displayBook() {
     switch (book.read) {
       case "Read":
         readBook.style.backgroundColor = "chartreuse";
+        readBook.textContent = "Read";
         break;
       case "Not Read":
         readBook.style.backgroundColor = "white";
+        readBook.textContent = "Not Read";
         break;
       case "In Progress":
         readBook.style.backgroundColor = "yellow";
+        readBook.textContent = "In Progress";
         break;
       default:
     }
