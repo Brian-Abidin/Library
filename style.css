@@ -13,10 +13,13 @@ body {
 .newbook {
   width: 100px;
   height: 50px;
-  background-color: purple;
+  background-color: white;
   position: fixed;
   bottom: 23px;
   right: 28px;
+  border-radius: 30px;
+  border: 1px black solid;
+  background: url(./icons/book.png) no-repeat;
 }
 
 .form {
@@ -50,7 +53,7 @@ body {
 }
 
 .botheader {
-  background-color: brown;
+  font-size: xx-large;
 }
 
 .bookdisplay {
