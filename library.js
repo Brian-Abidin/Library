@@ -25,6 +25,7 @@ function displayBook() {
   for (let i = myLibrary.length - 1; i < myLibrary.length; i += 1) {
     const book = myLibrary[i]; // storing myLibrary[i] properties inside book variable
     console.log(myLibrary[i]);
+
     const content = document.createElement("div");
     const titlebook = document.createElement("div");
     const authorbook = document.createElement("div");
@@ -32,18 +33,20 @@ function displayBook() {
     const delBook = document.createElement("button");
     const botBook = document.createElement("div");
     const readBook = document.createElement("button");
+
     titlebook.classList.add("titlebook");
     delBook.classList.add("delBook");
     content.classList.add("bookdisplay");
     botBook.classList.add("botBook");
     readBook.classList.add("readBook");
-    // delBook.setAttribute("id", i);
-    // readBook.setAttribute("id", i);
+
     content.setAttribute("id", i);
+
     titlebook.textContent = `${book.title}`;
     authorbook.textContent = `by ${book.author}`;
     pagesbook.textContent = `Pages: ${book.pages}`;
     delBook.textContent = "Delete";
+
     content.appendChild(titlebook);
     content.appendChild(authorbook);
     content.appendChild(pagesbook);
