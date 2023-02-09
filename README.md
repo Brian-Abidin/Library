@@ -1,6 +1,6 @@
 # Library
 
-A project done in the Odin Project curriculum.
+A project done as part of the Odin Project curriculum.
 
 This project is a part of the JavaScript Course. The purpose of this project 
 is to create a library using HTML, CSS, and JavaScript to display a webpage that 
