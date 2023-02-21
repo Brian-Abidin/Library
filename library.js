@@ -1,3 +1,5 @@
+// REFRACTOR CODE TO USE CLASS INSTEAD OF PLAIN CONSTRUCTORS
+
 const container = document.querySelector("#container");
 const form = document.querySelector("form");
 const newbook = document.getElementById("newbook");
@@ -12,6 +14,10 @@ newbook.addEventListener("click", () => {
 cancelbutton.addEventListener("click", () => {
   form.style.display = "none";
 });
+
+// Class Book {
+
+// }
 
 function Book(title, author, pages, read) {
   this.title = title;
