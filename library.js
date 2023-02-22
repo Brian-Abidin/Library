@@ -15,16 +15,21 @@ cancelbutton.addEventListener("click", () => {
   form.style.display = "none";
 });
 
-// Class Book {
-
-// }
-
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
+
+// function Book(title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
 
 // function displays most recent book added
 function displayBook() {
