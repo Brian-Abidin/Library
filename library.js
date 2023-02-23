@@ -15,6 +15,7 @@ cancelbutton.addEventListener("click", () => {
   form.style.display = "none";
 });
 
+// turned book function into class
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;
