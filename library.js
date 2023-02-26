@@ -9,24 +9,29 @@ const cancelbutton = document.getElementById("close");
 
 // TURN myLibrary into a class
 
-class Book {
+// class Book {
+//   constructor(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//   }
+// }
+
+class MyLibrary {
   constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
   }
-}
 
-class myLibrary {
-  constructor() {
-    this.books = [];
-  }
+  library = [];
 
   displayBook() {
-    for (let i = this.books.length - 1; i < this.books.length; i += 1) {
-      const book = this.books[i]; // storing myLibrary[i] properties inside book variable
-      console.log(this.books[i]);
+    for (let i = this.library.length - 1; i < this.library.length; i += 1) {
+      const book = this.library[i]; // storing myLibrary[i] properties inside book variable
+      console.log(this.library[i]);
 
       const content = document.createElement("div");
       const titlebook = document.createElement("div");
@@ -94,7 +99,7 @@ class myLibrary {
       }
 
       delBook.addEventListener("click", () => {
-        this.books.splice(i, 1);
+        this.library.splice(i, 1);
         content.textContent = "";
         content.replaceChildren();
         const attribute = content.getAttribute("id");
@@ -192,10 +197,10 @@ class myLibrary {
     const bookauthor = document.getElementById("bookauthor").value;
     const bookpages = document.getElementById("bookpages").value;
     const bookread = document.getElementById("bookread").value;
-    const book = new Book(booktitle, bookauthor, bookpages, bookread);
-    this.books.push(book); // add book to myLibrary Array
+    const book = new MyLibrary(booktitle, bookauthor, bookpages, bookread);
+    this.library.push(book); // add book to myLibrary Array
     event.preventDefault();
-    displayBook();
+    // displayBook();
   }
 }
 
