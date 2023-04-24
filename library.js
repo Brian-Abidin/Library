@@ -30,6 +30,22 @@ class Book {
     return document.querySelector("#booktitle + span.error");
   }
 
+  static get inputAuthor() {
+    return document.getElementById("bookauthor");
+  }
+
+  static get errorAuthor() {
+    return document.querySelector("#bookauthor + span.error");
+  }
+
+  static get inputPages() {
+    return document.getElementById("bookpages");
+  }
+
+  static get errorPages() {
+    return document.querySelector("#bookpages + span.error");
+  }
+
   static displayBook() {
     for (let i = Book.myLibrary.length - 1; i < Book.myLibrary.length; i += 1) {
       const book = Book.myLibrary[i];
@@ -148,12 +164,33 @@ function showError() {
     // if field is empty, display this error message
     Book.errorTitle.textContent = `Title needs to be ${Book.inputTitle.minLength} characters long. There is only ${Book.inputTitle.value.length} characters typed.`;
   }
+  if (!Book.inputAuthor.validity.valid) {
+    Book.errorAuthor.textContent = "Please enter a valid author name.";
+  }
+  if (!Book.inputPages.validity.valid) {
+    Book.errorPages.textContent = "Please enter a valid number of pages.";
+  }
 }
 
 Book.inputTitle.addEventListener("input", (event) => {
-  console.log(Book.inputTitle.validity);
   if (Book.inputTitle.validity.valid) {
     Book.errorTitle.textContent = "";
+  } else {
+    showError();
+  }
+});
+
+Book.inputAuthor.addEventListener("input", (event) => {
+  if (Book.inputAuthor.validity.valid) {
+    Book.errorAuthor.textContent = "";
+  } else {
+    showError();
+  }
+});
+
+Book.inputPages.addEventListener("input", (event) => {
+  if (Book.inputPages.validity.valid) {
+    Book.errorPages.textContent = "";
   } else {
     showError();
   }
