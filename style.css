@@ -20,8 +20,6 @@ body {
   bottom: 23px;
   right: 28px;
   border-style: none;
-  background: url(./icons/book.png) no-repeat;
-  background-position: center;
   cursor: grab;
 }
 
