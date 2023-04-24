@@ -21,6 +21,8 @@ body {
   right: 28px;
   border-style: none;
   cursor: grab;
+  background-image: url(./icons/book.png);
+  background-repeat: no-repeat;
 }
 
 .form {
