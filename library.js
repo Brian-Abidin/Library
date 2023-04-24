@@ -22,6 +22,14 @@ class Book {
     return document.getElementById("close");
   }
 
+  static get inputTitle() {
+    return document.getElementById("booktitle");
+  }
+
+  static get errorTitle() {
+    return document.querySelector("#booktitle + span.error");
+  }
+
   static displayBook() {
     for (let i = Book.myLibrary.length - 1; i < Book.myLibrary.length; i += 1) {
       const book = Book.myLibrary[i];
@@ -126,4 +134,27 @@ Book.cancelButton.addEventListener("click", () => {
   Book.form.style.display = "none";
 });
 
-Book.form.addEventListener("submit", Book.addBookToLibrary);
+Book.form.addEventListener("submit", (event) => {
+  if (!Book.inputTitle.validity.valid) {
+    event.preventDefault();
+    Book.errorTitle.textContent = "Please enter a valid title";
+  } else {
+    Book.addBookToLibrary(event);
+  }
+});
+
+function showError() {
+  if (!Book.inputTitle.validity.valid) {
+    // if field is empty, display this error message
+    Book.errorTitle.textContent = `Title needs to be ${Book.inputTitle.minLength} characters long. There is only ${Book.inputTitle.value.length} characters typed.`;
+  }
+}
+
+Book.inputTitle.addEventListener("input", (event) => {
+  console.log(Book.inputTitle.validity);
+  if (Book.inputTitle.validity.valid) {
+    Book.errorTitle.textContent = "";
+  } else {
+    showError();
+  }
+});
