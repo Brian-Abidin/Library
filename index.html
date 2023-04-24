@@ -9,7 +9,7 @@
   <body>
     <div class="wrapper">
       <div class="header">simple library</div>
-      <form action="#" method="post" class="form">
+      <form action="#" method="post" class="form" novalidate>
         <div class="formwrapper">
           <div class="newbooktitle">add a new book</div>
           <div class="booktitle">
@@ -19,8 +19,10 @@
               name="booktitle"
               id="booktitle"
               placeholder=""
+              minlength="8"
               required
             />
+            <span class="error" aria-live="polite"></span>
           </div>
           <div class="bookauthor">
             <label for="bookauthor">Author</label>
@@ -31,6 +33,7 @@
               placeholder=""
               required
             />
+            <span class="error" aria-live="polite"></span>
           </div>
           <div class="bookpages">
             <label for="bookpages"># of Pages</label>
@@ -42,6 +45,7 @@
               required
               min="1"
             />
+            <span class="error" aria-live="polite"></span>
           </div>
           <div class="bookread">
             <label for="bookread">Read?</label>
@@ -50,6 +54,7 @@
               <option value="Read">Read</option>
               <option value="In Progress">In Progress</option>
             </select>
+            <span class="error" aria-live="polite"></span>
           </div>
           <button type="submit" id="submitbtn">Add Book</button>
           <button type="button" id="close">Close</button>
