@@ -34,6 +34,25 @@ body {
   z-index: 9;
 }
 
+.booktitle,
+.bookauthor,
+.bookpages,
+.bookread {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.error {
+  width: inherit;
+  padding: 0;
+  font-size: 0.9rem;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+  color: white;
+}
+
 .formwrapper {
   border: 1px black solid;
   text-align: center;
